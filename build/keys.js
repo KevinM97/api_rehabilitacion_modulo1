@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     database: {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'bd_rehabilitacion',
+        host: 'bhpxur1yclr3qqzmavel-mysql.services.clever-cloud.com',
+        user: 'uawrftpwmngjolgj',
+        password: 'k3tjWbsl8JBehSoNFRdo',
+        database: 'bhpxur1yclr3qqzmavel',
     }
 };
