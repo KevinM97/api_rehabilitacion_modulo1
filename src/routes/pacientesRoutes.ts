@@ -13,7 +13,7 @@ class PacientesRoutes {
     config(): void{
         this.router.get('/', pacientesController.list);
         this.router.get('/:CEDULA_PAC', pacientesController.getPacient);
-
+        this.router.get('/:ENFERMEDADES_PAC', pacientesController.getEnfermedad);
     }
 }
 

@@ -10,6 +10,7 @@ class PacientesRoutes {
     config() {
         this.router.get('/', pacientesController_1.pacientesController.list);
         this.router.get('/:CEDULA_PAC', pacientesController_1.pacientesController.getPacient);
+        this.router.get('/:ENFERMEDADES_PAC',pacientesController_1.pacientesController.getIlnes);
     }
 }
 const pacientesRoutes = new PacientesRoutes();

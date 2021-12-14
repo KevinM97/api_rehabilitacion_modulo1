@@ -36,5 +36,17 @@ class PacientesController {
             console.log(paciente);
         });
     }
+    getIlnes(req,res){
+        return __awaiter(this, void 0, void 0, function* () {
+            const { ENFERMEDADES_PAC } = req.params;
+            const paciente = yield database_1.default.query('SELECT * FROM paciente INNER JOIN sesion ON paciente.ID_PAC = sesion.ID_PAC  where paciente.ENFERMEDADES_PAC = ?', [ENFERMEDADES_PAC])
+
+            if(paciente.length>0){
+                return res.json(paciente)
+            }
+            res.status(404).json({text: "La enfermedad no existe"});
+            console.log(paciente);
+        });
+    }
 }
 exports.pacientesController = new PacientesController();
