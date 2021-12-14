@@ -18,12 +18,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.pacientesController = void 0;
 const database_1 = __importDefault(require("../database"));
 class PacientesController {
+
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const pacientes = yield database_1.default.query('SELECT paciente.NOMBRE_PAC,paciente.CEDULA_PAC, paciente.APELLIDO_PAC, paciente.ENFERMEDADES_PAC, sesion.TIPO_SES, sesion.REPETICIONES_SES, sesion.TIEMPO_SES, sesion.FECHA_SES, sesion.SUPERVISOR_SES FROM paciente INNER JOIN sesion ON paciente.ID_PAC=sesion.ID_PAC ');
             res.json(pacientes);
         });
     }
+
     getPacient(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { CEDULA_PAC } = req.params;
@@ -36,6 +38,7 @@ class PacientesController {
             console.log(paciente);
         });
     }
+    
     getIlnes(req,res){
         return __awaiter(this, void 0, void 0, function* () {
             const { ENFERMEDADES_PAC } = req.params;
